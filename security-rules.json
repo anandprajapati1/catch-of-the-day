@@ -1,0 +1,14 @@
+{
+  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
+  "rules": {
+    // won't let people delete an existing room
+    ".write": "!data.exists()",
+    ".read": true,
+    "$room": {
+      // only the store owner can edit the data
+      ".write":
+        "auth != null && (!data.exists() || data.child('owner').child('uid').val() === auth.uid)",
+      ".read": true
+    }
+  }
+}
