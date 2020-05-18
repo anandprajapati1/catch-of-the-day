@@ -9,11 +9,6 @@ const Order = ({ fishes, order, removeFromOrder }) => {
         const fish = fishes[key];
         const count = order[key];
         const isAvaialable = fish && fish.status === 'available';
-        const transitionOptions = {
-            className:"order",
-            key,
-            timeout: {enter: 500, exit: 500}
-        }
 
         if (isAvaialable) {
             return prevTotal + (count * fish.price);
