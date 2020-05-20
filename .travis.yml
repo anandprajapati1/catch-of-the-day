@@ -10,14 +10,14 @@ script:
   # - npm run test
   - npm run build
 
-deploy:
-  provider: pages
-  local_dir: build
-  skip_cleanup: true
-  github_token: $GH_API_KEY  # Set in the settings page of your repository, as a secure variable
-  keep_history: true
-  on:
-    branch: master
+# deploy:
+#   provider: pages
+#   local_dir: build
+#   cleanup: false
+#   github_token: $GH_API_KEY  # Set in the settings page of your repository, as a secure variable
+#   keep_history: true
+#   on:
+#     branch: master
 
 notifications: 
   email:
